@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" ng-app="helloWorld">
 <head>
     <meta charset="utf-8">
     <title>Hola mundo</title>
 </head>
 <body>
     <h1>Hola mundo</h1>
+
+    <input type="text" ng-model="name" placeholder="¿Cuál es tu nombre?">
+
+    <p>¿Cómo lo llevas, {{name}}?</p>
+
+<script src="assets/angular.js"></script>
+<script>
+    var app = angular.module('helloWorld', []);
+</script>
 </body>
 </html>
