@@ -2,16 +2,28 @@
 <html lang="es" ng-app="helloWorld">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Hola mundo</title>
+
+    <link rel="stylesheet" href="assets/css/pure.min.css"/>
 </head>
 <body>
-    <h1>Hola mundo</h1>
+    <div class="pure-g">
+        <div class="pure-u-1">
+            <form class="pure-form">
+                <fieldset>
+                    <legend>Hola mundo</legend>
 
-    <input type="text" ng-model="name" placeholder="¿Cuál es tu nombre?">
+                    <input type="text" placeholder="¿Cuál es tu nombre?" ng-model="name">
+                </fieldset>
+            </form>
 
-    <p>¿Cómo lo llevas, {{name}}?</p>
+            <p>¿Cómo lo llevas, {{name}}?</p>
+        </div>
+    </div>
 
-<script src="assets/angular.js"></script>
+<script src="assets/js/angular.js"></script>
 <script src="lib/app.js"></script>
 </body>
 </html>
