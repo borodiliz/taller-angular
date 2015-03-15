@@ -4,23 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Hola mundo</title>
+    <title>Moviegami</title>
 
     <link rel="stylesheet" href="assets/css/pure.min.css"/>
 </head>
 <body>
-    <div class="pure-g">
-        <div class="pure-u-1">
-            <form class="pure-form">
-                <fieldset>
-                    <legend>Hola mundo</legend>
 
-                    <input type="text" placeholder="¿Cuál es tu nombre?" ng-model="name">
-                </fieldset>
-            </form>
+    <div class="pure-menu pure-menu-horizontal">
+        <a href="#" class="pure-menu-heading pure-menu-link">Moviegami</a>
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Películas</a></li>
+            <li class="pure-menu-item pure-menu-disabled"><a href="#" class="pure-menu-link">Actores</a></li>
+            <li class="pure-menu-item pure-menu-disabled"><a href="#" class="pure-menu-link">Directores</a></li>
+        </ul>
+    </div>
 
-            <p>¿Cómo lo llevas, {{name}}?</p>
-        </div>
+    <div ng-controller="MoviesController as movies">
+        <table class="pure-table pure-table-horizontal">
+            <thead>
+            <tr>
+                <th>Título</th>
+                <th>Año</th>
+                <th>IMDB rating</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr ng-repeat="movie in movies.moviesCollection">
+                <td>{{movie.title}}</td>
+                <td>{{movie.year}}</td>
+                <td>{{movie.imdbRating}}</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 
 <script src="assets/js/angular.js"></script>
