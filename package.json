@@ -1,0 +1,25 @@
+{
+  "name": "taller-angular",
+  "version": "1.0.0",
+  "description": "Código fuente de la presentación y el taller de Introducción a Angular JS",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ydarias/taller-angular.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ydarias/taller-angular/issues"
+  },
+  "homepage": "https://github.com/ydarias/taller-angular",
+  "dependencies": {
+    "express": "^4.12.3"
+  }
+}
