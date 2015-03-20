@@ -54,34 +54,34 @@ body {
 
 #listing {
   padding-left: 170px;
-}
 
-.movie-item {
-  .movie-decorator {
-    margin: 10px;
-    padding: 5px;
-    border: 1px solid @nav-blue;
-    border-left: 8px solid @nav-blue;
-  }
+  .movie-item {
+    .movie-decorator {
+      margin: 10px;
+      padding: 5px;
+      border: 2px solid @nav-blue;
+      border-left: 8px solid @nav-blue;
+    }
 
-  img {
-    max-width: 60px;
-    max-height: 90px;
-  }
+    img {
+      max-width: 60px;
+      max-height: 90px;
+    }
 
-  .movie-info {
-    padding-left: 10px;
+    .movie-info {
+      padding-left: 10px;
 
-    h4 {
-      margin-top: 0;
+      h4 {
+        margin-top: 0;
+      }
     }
   }
-}
 
-.rating {
-  .gradient(@rating-yellow-soft, @rating-yellow-hard);
-  .border-radius();
+  .rating {
+    .gradient(@rating-yellow-soft, @rating-yellow-hard);
+    .border-radius();
 
-  text-align: center;
-  padding: 5px;
+    text-align: center;
+    padding: 5px;
+  }
 }

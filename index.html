@@ -28,22 +28,12 @@
         </div>
 
         <div id="listing" class="pure-u-1" ng-controller="MoviesController as movies">
-            <div class="movie-item pure-u-1-2" ng-repeat="movie in movies.moviesCollection">
-                <div class="movie-decorator">
-                    <div class="pure-g">
-                        <div class="pure-u">
-                            <img ng-src="{{movie.image}}">
-                            <div class="rating">
-                                {{movie.imdbRating}}
-                            </div>
-                        </div>
-                        <div class="pure-u-3-4 movie-info">
-                            <h4>{{movie.title}} ({{movie.year}})</h4>
-                            <p ng-if="movie.synopsis">{{movie.synopsis}}</p>
-                        </div>
-                    </div>
-                </div>
+            <movie-item ng-repeat="movie in movies.moviesCollection"></movie-item>
+            <!-- Another way to use the movie-item directive, movie is always into the scope
+            <div ng-repeat="movie in movies.moviesCollection">
+                <movie-item></movie-item>
             </div>
+            -->
         </div>
     </div>
 

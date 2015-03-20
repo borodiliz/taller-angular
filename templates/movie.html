@@ -1,0 +1,16 @@
+<div class="movie-item pure-u-1-2">
+    <div class="movie-decorator">
+        <div class="pure-g">
+            <div class="pure-u">
+                <img ng-src="{{movie.image}}">
+                <div class="rating">
+                    {{movie.imdbRating}}
+                </div>
+            </div>
+            <div class="pure-u-3-4 movie-info">
+                <h4>{{movie.title}} ({{movie.year}})</h4>
+                <p ng-if="movie.synopsis">{{movie.synopsis}}</p>
+            </div>
+        </div>
+    </div>
+</div>
