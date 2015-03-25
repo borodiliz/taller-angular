@@ -11,33 +11,26 @@
 </head>
 <body>
 
-    <div id="layout" class="content pure-g">
-        <div id="nav" class="pure-u">
-            <a href="#" class="nav-menu-button">
-                <img id="logo" src="img/logo.png">
-            </a>
-            <div class="nav-inner">
-                <div class="pure-menu">
-                    <ul class="pure-menu-list">
-                        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Películas</a></li>
-                        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Actores</a></li>
-                        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Directores</a></li>
-                    </ul>
-                </div>
+<div id="layout" class="content pure-g">
+    <div id="nav" class="pure-u">
+        <a href="#" class="nav-menu-button">
+            <img id="logo" src="img/logo.png">
+        </a>
+        <div class="nav-inner">
+            <div class="pure-menu">
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item"><a href="#/movies" class="pure-menu-link">Películas</a></li>
+                    <li class="pure-menu-item"><a href="#/actors" class="pure-menu-link">Actores</a></li>
+                </ul>
             </div>
-        </div>
-
-        <div id="listing" class="pure-u-1" ng-controller="MoviesController as movies">
-            <movie-item ng-repeat="movie in movies.moviesCollection"></movie-item>
-            <!-- Another way to use the movie-item directive, movie is always into the scope
-            <div ng-repeat="movie in movies.moviesCollection">
-                <movie-item></movie-item>
-            </div>
-            -->
         </div>
     </div>
 
+    <div class="pure-u-1" ng-view></div>
+</div>
+
 <script src="assets/js/angular.js"></script>
+<script src="assets/js/angular-route.js"></script>
 <script src="build/app.min.js"></script>
 </body>
 </html>
