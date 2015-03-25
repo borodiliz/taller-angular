@@ -51,10 +51,36 @@ body {
     max-height: 150px;
   }
 
+  /*
   .pure-menu-item {
     :hover,
-    :active,
+    :active {
+      color: @nav-blue;
+    }
+
     :focus {
+      background-color: @nav-blue;
+      color: @broken-white;
+    }
+  }
+  */
+
+  .pure-menu-item {
+    :hover {
+      background-color: @broken-white;
+      color: @nav-blue;
+    }
+
+    :focus {
+      background-color: @broken-white;
+    }
+  }
+
+  .pure-menu-item.selected {
+    color: @nav-blue;
+    background-color: @broken-white;
+
+    a {
       color: @nav-blue;
     }
   }
