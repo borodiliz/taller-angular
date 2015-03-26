@@ -1,3 +1,11 @@
 <div ng-controller="actorsController as actors">
-    <actor-item ng-repeat="actor in actors.actorsCollection"></actor-item>
+    <div class="pure-g">
+        <div class="pure-u-1">
+            <a ng-click="actors.submitActor()">Guardar actor</a>
+        </div>
+    </div>
+
+    <div class="pure-g">
+        <actor-item ng-repeat="actor in actors.actorsCollection" class="pure-u-1-2"></actor-item>
+    </div>
 </div>
