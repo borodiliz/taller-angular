@@ -5,6 +5,9 @@
                ng-click="actors.showActorForm()">
                 <i class="fa fa-plus"></i> Nuevo actor
             </a>
+
+            <input type="text" placeholder="Busca aquí" ng-model="actorFilter">
+            <input type="text" placeholder="Ordena aquí" ng-model="actorSort">
         </div>
     </div>
 
@@ -52,6 +55,6 @@
     </form>
 
     <div class="pure-g">
-        <actor-item ng-repeat="actor in actors.actorsCollection" class="pure-u-1-2"></actor-item>
+        <actor-item ng-repeat="actor in actors.actorsCollection | filter: actorFilter | orderBy: actorSort" class="pure-u-1-2"></actor-item>
     </div>
 </div>
