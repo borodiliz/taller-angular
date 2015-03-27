@@ -8,39 +8,45 @@
         </div>
     </div>
 
-    <form class="pure-form pure-form-aligned" ng-submit="actors.submitActor(form)" ng-if="actors.status.showActorForm">
+    <form name="actorForm" class="pure-form pure-form-aligned" ng-if="actors.status.showActorForm" novalidate>
         <fieldset>
             <div class="pure-control-group">
                 <label for="actorId">Id</label>
-                <input id="actorId" type="text" placeholder="El identificador en IMDb"
-                       class="pure-input-1-2" ng-model="form.id">
+                <input id="actorId" name="actorId" type="text" placeholder="El identificador en IMDb"
+                       class="pure-input-1-2" ng-model="newActor.id" required>
             </div>
 
             <div class="pure-control-group">
                 <label for="actorName">Nombre</label>
-                <input id="actorName" type="text" placeholder="El nombre del actor"
-                       class="pure-input-1-2" ng-model="form.name">
+                <input id="actorName" name="actorName" type="text" placeholder="El nombre del actor"
+                       class="pure-input-1-2" ng-model="newActor.name" required>
             </div>
 
             <div class="pure-control-group">
                 <label for="actorBio">Bio</label>
                 <input id="actorBio" type="text" placeholder="¿Qué ha hecho el gañán este?"
-                       class="pure-input-1-2" ng-model="form.bio">
+                       class="pure-input-1-2" ng-model="newActor.bio">
             </div>
 
             <div class="pure-control-group">
                 <label for="actorImage">Image URL</label>
                 <input id="actorImage" type="text" placeholder="Pon la ruta de la foto en IMDb"
-                       class="pure-input-1-2" ng-model="form.image">
+                       class="pure-input-1-2" ng-model="newActor.image">
             </div>
 
             <div class="pure-control-group">
                 <label for="actorRanking">IMDb ranking</label>
-                <input id="actorRanking" type="number" placeholder="El ranking del coleguita en IMDb" ng-model="form.imdbRanking">
+                <input id="actorRanking" type="number" placeholder="El ranking del coleguita en IMDb" ng-model="newActor.imdbRanking">
             </div>
 
             <div class="pure-controls">
-                <button type="submit" class="pure-button pure-button-primary"><i class="fa fa-database"></i> Guardar</button>
+                <button type="submit" class="pure-button pure-button-primary"
+                        ng-show="actorForm.$valid" ng-click="actors.submitActor(newActor)">
+                    <i class="fa fa-database"></i> Guardar
+                </button>
+                <button class="pure-button pure-button-disabled" ng-hide="actorForm.$valid">
+                    <i class="fa fa-database"></i> Guardar
+                </button>
             </div>
         </fieldset>
     </form>
