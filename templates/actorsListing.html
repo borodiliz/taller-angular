@@ -1,12 +1,49 @@
 <div ng-controller="actorsController as actors">
     <div class="pure-g">
         <div class="pure-u-1">
-            <a href="#" class="pure-button"
-               ng-click="actors.submitActor()">
+            <a class="pure-button"
+               ng-click="actors.showActorForm()">
                 <i class="fa fa-plus"></i> Nuevo actor
             </a>
         </div>
     </div>
+
+    <form class="pure-form pure-form-aligned" ng-submit="actors.submitActor(form)" ng-if="actors.status.showActorForm">
+        <fieldset>
+            <div class="pure-control-group">
+                <label for="actorId">Id</label>
+                <input id="actorId" type="text" placeholder="El identificador en IMDb"
+                       class="pure-input-1-2" ng-model="form.id">
+            </div>
+
+            <div class="pure-control-group">
+                <label for="actorName">Nombre</label>
+                <input id="actorName" type="text" placeholder="El nombre del actor"
+                       class="pure-input-1-2" ng-model="form.name">
+            </div>
+
+            <div class="pure-control-group">
+                <label for="actorBio">Bio</label>
+                <input id="actorBio" type="text" placeholder="¿Qué ha hecho el gañán este?"
+                       class="pure-input-1-2" ng-model="form.bio">
+            </div>
+
+            <div class="pure-control-group">
+                <label for="actorImage">Image URL</label>
+                <input id="actorImage" type="text" placeholder="Pon la ruta de la foto en IMDb"
+                       class="pure-input-1-2" ng-model="form.image">
+            </div>
+
+            <div class="pure-control-group">
+                <label for="actorRanking">IMDb ranking</label>
+                <input id="actorRanking" type="number" placeholder="El ranking del coleguita en IMDb" ng-model="form.imdbRanking">
+            </div>
+
+            <div class="pure-controls">
+                <button type="submit" class="pure-button pure-button-primary"><i class="fa fa-database"></i> Guardar</button>
+            </div>
+        </fieldset>
+    </form>
 
     <div class="pure-g">
         <actor-item ng-repeat="actor in actors.actorsCollection" class="pure-u-1-2"></actor-item>
